@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Design Book Club</title>
+	<link rel="icon" type="image/x-icon" href="bookclub_favicon.png">
+	<link rel="stylesheet" href="bookclub.css">
+
+</head>
+<body>
+	<h1>Welcome to HTML Bookclub!</h1>
+	<p>Please sign up to join the conversation.</p>
+	<div id="overlay" onclick="off()">
+		<div id="text">Interesting Choice</div>
+	</div>
+
+	<form>
+		<label for="user">Username:</label><br>
+		<input type="text" id="user" name="user"><br>
+
+		<label for="email">Email:</label><br>
+		<input type="email" id="email" name="email"><br>
+
+		<label for="passA">Password:</label><br>
+		<input type="password" placeholder="At least 8 characters" id="passA" name="passA" value=""><br>
+		
+		<input type="password" placeholder="Re-type password" id="passB" name="passB"><br>
+		
+		<label for="fav">Favorite Book:</label><br>
+		<input type="text" id="fav" name="fav"><br>
+
+		<label for="genre">Favorite Genre:</label><br>
+		<input list="genre" placeholder="Pick one" name="genre">
+		<datalist id="genre">
+			<option value="Science Fiction">
+			<option value="Fantasy">
+			<option value="Biography">
+			<option value="Romance">
+			<option value="Horror">
+			<option value="Historical">
+			<option value="Mystery">
+			<option value="Poetry">
+			<option value="Self-Help">
+			<option value="Humor">
+			<option value="Dystopia">
+		</datalist><br>
+		<p class="fiction">Do you prefer:<br>
+		<input type="radio" id="prefer" name="prefer" selected><label for="fiction">Fiction</label><br>
+		<input type="radio" id="prefer" name="prefer" onclick="on ()"><label for="nonfiction">Non-Fiction</label></p>
+
+		<input type="checkbox" id="news" name="news" selected><label for="news">Join our newsletter!</label><br>
+		<button onclick="return validateForm();">Sign Up</button>
+	</form>
+
+<script type="text/javascript">
+function validateForm () {
+	var passA = document.getElementById("passA").value;
+	var passB = document.getElementById("passB").value;
+
+	if (passA == passB) {
+	alert("Yehaw!");
+	return true;
+	}
+	else
+	{
+	alert("Try again Dummy!");
+	return false;
+	}
+}
+
+function on() {
+	document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+	document.getElementById("overlay").style.display = "none";
+}
+document.getElementById("message").style.display = "block"
+</script>	
+</body>
+</html>
